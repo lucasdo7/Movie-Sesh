@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :bookmarks, only: %i[create destroy]
 
   resources :lists, only: %i[index]
+
+  resources :sessions, only: %i[index show new create destroy]
 end
