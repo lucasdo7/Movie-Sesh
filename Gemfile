@@ -30,6 +30,10 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'devise'
 
+# This library provides functionality to send internet mail via SMTP, the Simple Mail Transfer Protocol.
+# For details of SMTP itself, see RFC2821.
+gem 'net-smtp'
+
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'simple_form', github: 'heartcombo/simple_form'
