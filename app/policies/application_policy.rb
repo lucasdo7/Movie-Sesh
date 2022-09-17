@@ -49,5 +49,9 @@ class ApplicationPolicy
     private
 
     attr_reader :user, :scope
+
+    def is_owner?
+      record.user == user
+    end
   end
 end

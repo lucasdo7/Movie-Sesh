@@ -5,7 +5,7 @@ class BookmarkPolicy < ApplicationPolicy
     #   scope.all
     # end
 
-    def edit? # so o dono do bookmark pode editar
+    def edit?
       # user ==> current_user
       # record ==> o que estamos passando , no caso bookmark(comentario)
       # record.user == user
@@ -19,11 +19,11 @@ class BookmarkPolicy < ApplicationPolicy
     def destroy?
       is_owner
     end
-  end
 
-  private
+    #   private
 
-  def is_owner?
-    record.user == user
+    # def is_owner?
+    #   record.user == user
+    # end
   end
 end

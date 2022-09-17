@@ -1,8 +1,10 @@
 class BookmarksController < ApplicationController
   def create
+    authorize @bookmark
   end
 
   def destroy
+    authorize @bookmark
   end
 
   private
@@ -10,5 +12,4 @@ class BookmarksController < ApplicationController
   def bookmark_params
     params.require(:bookmark).permit(:comment, :user_rating)
   end
-
 end
