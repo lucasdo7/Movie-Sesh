@@ -9,5 +9,5 @@ Rails.application.routes.draw do
 
   resources :lists, only: %i[index]
 
-  resources :sessions, only: %i[index show new create destroy]
+  resources :seshs, only: %i[index show new create destroy]
 end
