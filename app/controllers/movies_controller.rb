@@ -1,10 +1,12 @@
 class MoviesController < ApplicationController
   def index
-    @movies = Movie.all
+    # @movies = Movie.all
+    @movies = policy_scope(Movie)
   end
 
   def show
     @movie = Movie.find(params[:id])
+    authorize @movie
   end
 
   def search

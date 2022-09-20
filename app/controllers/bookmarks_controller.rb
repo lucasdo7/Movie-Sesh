@@ -1,8 +1,10 @@
 class BookmarksController < ApplicationController
   def create
+    authorize @bookmark
   end
 
   def destroy
+    authorize @bookmark
   end
 
   private
