@@ -20,10 +20,10 @@ class BookmarkPolicy < ApplicationPolicy
       is_owner
     end
 
-    #   private
+    private
 
-    # def is_owner?
-    #   record.user == user
-    # end
+    def is_owner?
+      record.user == user
+    end
   end
 end
