@@ -18,12 +18,14 @@ api_key = "61c2b6f8c8b47f056629753697b7a396"
 url = "https://api.themoviedb.org/3/movie/top_rated?api_key=#{api_key}&language=en-US&page=1"
 
 movies = JSON.parse(URI.open(url).read)
-  movies["results"].each do |result|
-  puts result
-  # Movie.create!(title: result["original_title"]  )
-  end
 
-  puts "done"
+movies["results"].each do |result|
+  Movie.create!(title: result["original_title"], overview: result["overview"], rating_imdb: result["vote_average"],
+                release_year: result["release_date"], language: result["original_language"], director: result["adult"],
+                genre: result["genre_ids"], poster: result["poster_path"])
+end
+
+puts "done"
 
 # url = URI("https://movie-details1.p.rapidapi.com/imdb_api/movie?id=tt1375666")
 
