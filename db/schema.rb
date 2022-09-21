@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_16_185104) do
+ActiveRecord::Schema.define(version: 2022_09_21_221215) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,18 +45,20 @@ ActiveRecord::Schema.define(version: 2022_09_16_185104) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "watched"
+    t.string "genre"
+    t.string "poster"
     t.index ["list_id"], name: "index_movies_on_list_id"
   end
 
-  create_table "sessions", force: :cascade do |t|
+  create_table "seshs", force: :cascade do |t|
     t.date "date"
     t.time "hour"
     t.bigint "user_id", null: false
     t.bigint "movie_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["movie_id"], name: "index_sessions_on_movie_id"
-    t.index ["user_id"], name: "index_sessions_on_user_id"
+    t.index ["movie_id"], name: "index_seshs_on_movie_id"
+    t.index ["user_id"], name: "index_seshs_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -79,6 +81,6 @@ ActiveRecord::Schema.define(version: 2022_09_16_185104) do
   add_foreign_key "bookmarks", "lists"
   add_foreign_key "bookmarks", "movies"
   add_foreign_key "movies", "lists"
-  add_foreign_key "sessions", "movies"
-  add_foreign_key "sessions", "users"
+  add_foreign_key "seshs", "movies"
+  add_foreign_key "seshs", "users"
 end
