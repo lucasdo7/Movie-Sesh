@@ -10,6 +10,6 @@ class BookmarksController < ApplicationController
   private
 
   def bookmark_params
-    params.require(:bookmark).permit(:comment, :user_rating)
+    params.require(:bookmark).permit(:comment, :user_rating, :watched)
   end
 end
