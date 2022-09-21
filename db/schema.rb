@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_21_224107) do
+ActiveRecord::Schema.define(version: 2022_09_21_224913) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,11 +19,9 @@ ActiveRecord::Schema.define(version: 2022_09_21_224107) do
     t.string "comment"
     t.integer "user_rating"
     t.bigint "movie_id", null: false
-    t.bigint "list_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "watched"
-    t.index ["list_id"], name: "index_bookmarks_on_list_id"
     t.index ["movie_id"], name: "index_bookmarks_on_movie_id"
   end
 
@@ -34,13 +32,11 @@ ActiveRecord::Schema.define(version: 2022_09_21_224107) do
     t.integer "release_year"
     t.string "runtime"
     t.string "language"
-    t.bigint "list_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "director"
     t.string "genre"
     t.string "poster"
-    t.index ["list_id"], name: "index_movies_on_list_id"
   end
 
   create_table "seshs", force: :cascade do |t|
