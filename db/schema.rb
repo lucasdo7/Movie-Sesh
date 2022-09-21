@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_21_195524) do
+ActiveRecord::Schema.define(version: 2022_09_21_195658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(version: 2022_09_21_195524) do
   end
 
   create_table "seshs", force: :cascade do |t|
-    t.date "date"
-    t.time "hour"
+    t.date "sesh_date"
+    t.time "sesh_hour"
     t.bigint "user_id", null: false
     t.bigint "movie_id", null: false
     t.datetime "created_at", precision: 6, null: false
