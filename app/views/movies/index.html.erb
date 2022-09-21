@@ -2,5 +2,10 @@
 <div class="container">
   <div class="row">
     <h2 style="text-align: center;">Testando Movies#index</h2>
+    <ul>
+     <% @movies.each do |movie| %>
+      <li><%= movie.title %></li>
+     <% end %>
+    </ul>
   </div>
 </div>
