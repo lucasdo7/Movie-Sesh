@@ -25,6 +25,6 @@ class SeshsController < ApplicationController
   private
 
   def seshs_params
-    params.require(:sesh).permit(:date, :hour)
+    params.require(:sesh).permit(:sesh_date, :sesh_hour)
   end
 end
