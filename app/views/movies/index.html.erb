@@ -1,11 +1,21 @@
 
-<div class="container">
-  <div class="row">
-    <h2 style="text-align: center;">Testando Movies#index</h2>
-    <ul>
-     <% @movies.each do |movie| %>
-      <li><%= movie.title %></li>
-     <% end %>
-    </ul>
+<div class="container" style="background-color: #241E4E;">
+  <h2 style="text-align: center;"><strong>Popcorn Sesh</strong> 🍿</h2>
+  <div class="row p-3 m-3" style="justify-content: space-between;">
+      <% @movies.each do |movie| %>
+        <div class="card" style="width: 18rem;">
+          <img src="https://www.mashed.com/img/gallery/the-secret-ingredient-that-makes-movie-theater-popcorn-taste-so-good/intro-1565214663.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><%= movie.title %></h5>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><%= movie.rating_imdb %></li>
+            <li class="list-group-item"><%= movie.language %></li>
+          </ul>
+          <div class="card-body">
+            <%= link_to "Movie details", movie_path(movie) %>
+          </div>
+        </div>
+      <% end %>
   </div>
 </div>
